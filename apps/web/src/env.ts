@@ -102,6 +102,25 @@ export const env = createEnv({
     MICROSOFT_TENANT_ID: z.string().optional().default("common"),
     MICROSOFT_CLIENT_ID: z.string().optional(),
     MICROSOFT_CLIENT_SECRET: z.string().optional(),
+
+    /**
+     * App name
+     */
+    APP_NAME: z.string().optional().default("Rallly"),
+    /**
+     * Primary color for theming (hex format, e.g., "#4f46e5")
+     */
+    PRIMARY_COLOR: z.string().optional().default("#4f39f6"),
+    /**
+     * Logo URL for the email logo
+     */
+    LOGO_URL: z.url().optional().default("/static/logo.svg"),
+    LOGO_ICON_URL: z
+      .url()
+      .optional()
+      .default(
+        "https://d39ixtfgglw55o.cloudfront.net/images/rallly-logo-mark.png",
+      ),
   },
   /*
    * Environment variables available on the client (and server).
@@ -170,6 +189,10 @@ export const env = createEnv({
     MICROSOFT_TENANT_ID: process.env.MICROSOFT_TENANT_ID,
     MICROSOFT_CLIENT_ID: process.env.MICROSOFT_CLIENT_ID,
     MICROSOFT_CLIENT_SECRET: process.env.MICROSOFT_CLIENT_SECRET,
+    PRIMARY_COLOR: process.env.PRIMARY_COLOR,
+    LOGO_URL: process.env.LOGO_URL,
+    LOGO_ICON_URL: process.env.LOGO_ICON_URL,
+    APP_NAME: process.env.APP_NAME,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 });

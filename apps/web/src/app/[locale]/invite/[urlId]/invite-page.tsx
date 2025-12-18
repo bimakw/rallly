@@ -33,7 +33,7 @@ const GoToApp = () => {
           </p>
           <div>
             <Link
-              className="inline-flex items-center gap-2 text-primary hover:underline"
+              className="inline-flex items-center gap-2 hover:underline"
               href={`/poll/${poll.id}`}
             >
               <Trans i18nKey="manage" defaults="Manage" />
@@ -50,7 +50,7 @@ export function InvitePage() {
   const poll = usePoll();
 
   return (
-    <div className="h-dvh overflow-auto overscroll-none bg-gray-100 p-3 sm:p-6">
+    <div className="h-dvh overflow-auto overscroll-none bg-poll p-3 sm:p-6">
       <PollViewTracker pollId={poll.id} />
       <div className="mx-auto w-full max-w-4xl space-y-4">
         <GoToApp />
